@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import {GlobalStyle} from './components/styles'
 import {Title, CurrencyIn, ConverterContainer} from './components'
 
@@ -14,13 +14,13 @@ function App() {
   console.log(currency)
 
   return (
-    <Fragment>
+    <>
       <GlobalStyle />
       <Title>Amazing Currency Converter</Title>
       <ConverterContainer>
         <CurrencyIn currencyTypes={currency}></CurrencyIn>
       </ConverterContainer>
-    </Fragment>
+    </>
   );
 }
 

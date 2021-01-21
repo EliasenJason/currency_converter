@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Title>Amazing Currency Converter</Title>
+      <Title>Amazing Currency Converter testing!</Title>
       <ConverterContainer>
         <CurrencyIn currencyTypes={currency}></CurrencyIn>
       </ConverterContainer>

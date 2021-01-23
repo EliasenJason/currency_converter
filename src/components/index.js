@@ -9,12 +9,14 @@ export function ConverterContainer({children}) {
     return <ConverterContainerStyled>{children}</ConverterContainerStyled>
 }
 
-export function CurrencyIn({children, currencyTypes, ...restProps}) {
-    let currencyAbbreviations = Object.keys(currencyTypes.rates)
+export function CurrencyIn({children, currencyData, currencyIn, selectCurrencyIn, ...restProps}) {
+
+    let currencyAbbreviations = Object.keys(currencyData.rates)
+
     return (
-        <CurrencyInStyled {...restProps}>
-            {currencyAbbreviations.map(currency => {
-                return <option value={currency}>{currency}</option>
+        <CurrencyInStyled {...restProps} onChange={(event) => selectCurrencyIn(event.target.value)}>
+            {currencyAbbreviations.map((currency, index) => {
+                return <option value={restProps.CurrencyIn} key={index}>{currency}</option>
             })}
             {children}
         </CurrencyInStyled>

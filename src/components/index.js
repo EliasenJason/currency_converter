@@ -1,5 +1,5 @@
 import React from 'react'
-import { TitleStyled, CurrencySelect, ConverterContainerStyled } from './styles'
+import { TitleStyled, CurrencySelectStyled, ConverterContainerStyled, CurrencyInputStyled } from './styles'
 
 export function Title({children}) {
     return <TitleStyled>{children}</TitleStyled>
@@ -14,11 +14,19 @@ export function CurrencySelector({children, currencyData, currencyIn, called, ..
     let currencyAbbreviations = Object.keys(currencyData.rates)
 
     return (
-        <CurrencySelect {...restProps} onChange={(event) => called(event.target.value)}>
+        <CurrencySelectStyled {...restProps} onChange={(event) => called(event.target.value)}>
             {currencyAbbreviations.map((currency, index) => {
                 return <option value={restProps.currencyIn} key={index}>{currency}</option>
             })}
             {children}
-        </CurrencySelect>
+        </CurrencySelectStyled>
+    )
+}
+
+export function CurrencyInput({children, setAmount, select}) {
+    return (
+        <CurrencyInputStyled value={select} onChange={(event) => setAmount(event.target.value)}>
+            {children}
+        </CurrencyInputStyled>
     )
 }

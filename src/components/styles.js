@@ -30,7 +30,10 @@ export const ConverterContainerStyled = styled.div`
     height: 300px;
     background-color: white;
 `
-export const CurrencySelect = styled.select`
+export const CurrencySelectStyled = styled.select`
   
 `
 
+export const CurrencyInputStyled = styled.input`
+
+`
